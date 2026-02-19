@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  openclaw-{{USER}}:
+    image: openclaw-lab:latest
+    container_name: openclaw-{{USER}}
+    ports:
+      - "{{PORT}}:3100"
+    volumes:
+      - ./users/{{USER}}/workspace:/workspace
+      - ./users/{{USER}}/env/.env:/app/.env
+    env_file:
+      - ./users/{{USER}}/env/.env
+    restart: unless-stopped
+    environment:
+      - PORT=3100
+      - OPENCLAW_STATE_DIR=/workspace/.state
+    command: ["openclaw", "gateway", "--port", "3100", "--bind", "lan", "--allow-unconfigured"]

@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  openclaw-userB:
+    image: openclaw-lab:latest
+    container_name: openclaw-userB
+    ports:
+      - "3102:3100"
+    volumes:
+      - ./users/userB/workspace:/workspace
+      - ./users/userB/env/.env:/app/.env
+      - ./users/userB/extensions/k-dexter-bridge:/usr/local/lib/node_modules/openclaw/extensions/k-dexter-bridge:ro
+    env_file:
+      - ./users/userB/env/.env
+    restart: unless-stopped
+    environment:
+      - PORT=3100
+      - OPENCLAW_STATE_DIR=/workspace/.state
+    command: ["openclaw", "gateway", "--port", "3100", "--bind", "lan", "--allow-unconfigured"]

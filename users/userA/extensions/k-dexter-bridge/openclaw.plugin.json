@@ -1,0 +1,11 @@
+{
+    "id": "k-dexter-bridge",
+    "name": "K-Dexter Bridge",
+    "description": "Bridges K-Dexter financial tools (KIS stock API, technical analysis) into OpenClaw",
+
+    "configSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+    }
+}

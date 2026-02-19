@@ -1,0 +1,12 @@
+{
+  "name": "k-dexter-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "K-Dexter financial tools bridge for OpenClaw",
+  "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

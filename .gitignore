@@ -1,0 +1,31 @@
+# API Keys & Secrets
+users/*/env/.env
+users/*/workspace/secret.txt
+
+# Session data (conversation history)
+users/*/workspace/.state/agents/*/sessions/*.jsonl
+
+# Runtime state (auto-generated)
+users/*/workspace/.state/canvas/
+users/*/workspace/.state/agents/*/agent/
+
+# Logs
+*.log
+logs.txt
+full_logs.txt
+
+# Cloudflare tunnel logs
+/tmp/cf-tunnels/
+
+# Node modules
+node_modules/
+
+# macOS
+.DS_Store
+
+# Patch files (large binaries)
+bypass_pairing.js
+control_ui_patch.js
+server_patch_1.js
+server_patch_2.js
+temp_patch.js
